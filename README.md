@@ -34,4 +34,11 @@ minikube start
     ```
     k get nodes
     ``` 
-    //show us that minikube is ready and running
+    show us that minikube is ready and running
+    ```
+    k get pods -A
+    ```
+    shows all pods in all namespaces. For now we should see only system related pods running in kube-system namespace
+3) Let's add some apps
+    ```
+    
