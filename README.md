@@ -5,7 +5,7 @@
 > [!NOTE]
 > This is pure Mac OS installation. Please comment if you would like to have docs for another OS (Win,Linux)
 
-1) The easiest way to run containers on Mac is to use ![**Colima**](https://github.com/abiosoft/colima) 
+1) The easiest way to run containers on Mac is to use [**Colima**](https://github.com/abiosoft/colima) 
     ```
     brew install colima
     ```
