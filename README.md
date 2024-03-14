@@ -1,3 +1,4 @@
+<meta name="google-site-verification" content="_yxgkFx9SFSNinWmJDkWbOSHk5qeXgaDTNOOU56249g" />
 # minikube with monitoring enabled
 
 ## Kubernetes (for MAC)
