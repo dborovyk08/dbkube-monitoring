@@ -138,8 +138,8 @@
     minikube service grafana-np
     ```
 7) Add Prometheus data source (use prometheus-server:80 URL):
-    !(https://dborovyk-nginx-public.s3.amazonaws.com/grafana.png)
+    ![data source](https://dborovyk-nginx-public.s3.amazonaws.com/grafana.png)
 8) Import community based Grafana dashboards. For example you can use dashboard with 6417 id: 
-    !(https://dborovyk-nginx-public.s3.amazonaws.com/grafana3.png)
+    ![Import community dashboard](https://dborovyk-nginx-public.s3.amazonaws.com/grafana3.png)
 9) Using Dashboard to monitor our Kubernetes:
-    !(https://dborovyk-nginx-public.s3.amazonaws.com/grafana2.jpg)
+    ![Gragana Dashboard](https://dborovyk-nginx-public.s3.amazonaws.com/grafana2.jpg)
