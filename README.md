@@ -107,3 +107,7 @@
     ```
 2) Prometheus UI:
     ![Screenshot of the Prometheus console](https://dborovyk-nginx-public.s3.amazonaws.com/prometheus.jpg)
+
+3) Using Prometheus UI:
+    ![Now we can use PromQL to request information and show graphs](https://dborovyk-nginx-public.s3.amazonaws.com/prometheus2.jpg)
+
