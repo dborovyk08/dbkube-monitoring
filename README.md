@@ -71,7 +71,7 @@ minikube start
     ```
     If you're using CURL you can see that server address is changing all the time because there is no caching with CURL so load-balancing just works
 
-    (Optional) You can also use LoadBalancer instead of NodePort but you will need to use sudo for that.
+    **(Optional)** You can also use LoadBalancer instead of NodePort but you will need to use sudo for that.
     ```
     ...
     k expose deployment nginx-hello-text --type=NodePort --port=80
