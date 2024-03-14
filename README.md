@@ -33,5 +33,5 @@ minikube start
 2) Now we can start our "k" commands:
     ```
     k get nodes
-    ``` //show us that minikube is ready and running
-    
+    ``` 
+    //show us that minikube is ready and running
