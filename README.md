@@ -92,11 +92,11 @@
     ```
 3) Expose the prometheus-server service via NodePort
     ```
-    kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-np
+    k expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-np
     ```
 4) Check services:
     ```
-    kubectl get svc
+    k get svc
     ```
 
 ### Access Prometheus UI
@@ -107,7 +107,39 @@
     ```
 2) Prometheus UI:
     ![Screenshot of the Prometheus console](https://dborovyk-nginx-public.s3.amazonaws.com/prometheus.jpg)
-
 3) Using Prometheus UI:
+    Consider using [Prometheus Docs] (prometheus.io/docs/prometheus/latest/querying/basics/) for more information on how to use PromQL 
     ![Now we can use PromQL to request information and show graphs](https://dborovyk-nginx-public.s3.amazonaws.com/prometheus2.jpg)
 
+### Grafana
+
+1) Installation. Add Grafana Helm repo:
+    ```
+    helm repo add grafana https://grafana.github.io/helm-charts
+    ```
+2) Install Grafana chart:
+    ```
+    helm install grafana grafana/grafana
+    ```
+3) Expose Grafana service via NodePort in order to access Grafana UI:
+    ```
+    k expose service grafana --type=NodePort --target-port=3000 --name=grafana-np
+    ```
+4) Check exposed service:
+    ```
+    k get services
+    ```
+5) Get Grafana admin credentials
+    ```
+    k get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+    ```
+6) Access Grafana Web UI
+    ```
+    minikube service grafana-np
+    ```
+7) Add Prometheus data source (use prometheus-server:80 URL):
+    !(https://dborovyk-nginx-public.s3.amazonaws.com/grafana.png)
+8) Import community based Grafana dashboards. For example you can use dashboard with 6417 id: 
+    !(https://dborovyk-nginx-public.s3.amazonaws.com/grafana3.png)
+9) Using Dashboard to monitor our Kubernetes:
+    !(https://dborovyk-nginx-public.s3.amazonaws.com/grafana2.jpg)
