@@ -22,3 +22,16 @@ Start the cluster
 ```
 minikube start
 ```
+
+### Let's play with it ###
+
+1)  I would suggest to create an alias for kubectl.
+    In case of using zsh as a shell, add alias into zshrc :
+    ```
+    cat ~/.zshrc >> alias k=kubectl
+    ```
+2) Now we can start our "k" commands:
+    ```
+    k get nodes
+    ``` //show us that minikube is ready and running
+    
