@@ -106,5 +106,4 @@
     minikube service prometheus-server-np --url
     ```
 2) Prometheus UI:
-    ```
-    
+    ![Screenshot of the Prometheus console](https://drive.google.com/file/d/1BSnnjrXxG1LijobXTVOTbmAbdk6IWFKN/view?usp=drive_link)
