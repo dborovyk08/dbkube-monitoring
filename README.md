@@ -78,4 +78,4 @@ minikube start
     ...
     minikube tunnel
     ```
-4) Now adding monitoring
+### Now adding monitoring
