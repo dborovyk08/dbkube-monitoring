@@ -1,29 +1,27 @@
 # minikube with monitoring enabled
 
-## Installation steps
-
-### Kubernetes (for MAC)
+## Kubernetes (for MAC)
 
 1) The easiest way to run containers on Mac is to use **Colima** 
-```
-brew install colima
-```
-Then just start your runtime
-```
-brew start colima
-```
+    ```
+    brew install colima
+    ```
+    Then just start your runtime
+    ```
+    brew start colima
+    ```
 
 2) So now we can install and start our kubernetes cluster. The easiest way is to use **minikube**
 
-```
-brew install minikube
-```
-Start the cluster
-```
-minikube start
-```
+    ```
+    brew install minikube
+    ```
+    Start the cluster
+    ```
+    minikube start
+    ```
 
-### Let's play with it ###
+## Let's play with it ###
 
 1)  I would suggest to create an alias for kubectl.
     In case of using zsh as a shell, add alias into zshrc :
@@ -78,4 +76,35 @@ minikube start
     ...
     minikube tunnel
     ```
-### Now adding monitoring
+## Now adding monitoring
+
+### Prometheus
+
+1) Add prometheus repository
+
+    ```
+    helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+    ```
+
+2) Install provided Helm chart for Prometheus
+    ```
+    helm install prometheus prometheus-community/prometheus
+    ```
+3) Expose the prometheus-server service via NodePort
+    ```
+    kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-np
+    ```
+4) Check services:
+    ```
+    kubectl get svc
+    ```
+
+### Access Prometheus UI
+
+1) Expose service URL:
+    ```
+    minikube service prometheus-server-np --url
+    ```
+2) Prometheus UI:
+    ```
+    
