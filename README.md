@@ -213,9 +213,17 @@
     It should start from arn:aws:eks:*your-config*
 
 > [!NOTE]
-> No worries if you have another kube-config already in place.
-> You can switch between configs at any time
+> No worries if you have another kube-config (context) already in place.
+> You can switch between contexts at any time
 > ```
 > kubectl config use-context *your-context*
 > ```
+>Also you can check all contexts by running command:
+>```
+>kubectl config get-clusters
+>```
+>Remember, if you run terraform couple of times you can find that it creates new context all the time.
+>You may want to delete old context by running the command:
+>```
+>kubectl config delete-cluster *your-cluster*
 
