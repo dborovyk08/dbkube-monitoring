@@ -220,11 +220,13 @@
 > ```
 >Also you can check all contexts by running command:
 >```
->kubectl config get-clusters
+>kubectl config get-context
+>kubectl config get-cluster
 >```
 >Remember, if you run terraform couple of times you can find that it creates new context all the time.
 >You may want to delete old context by running the command:
 >```
+>kubectl config delete-context *your-cluster*
 >kubectl config delete-cluster *your-cluster*
 
 5) Congrats, your cluster in EKS is live and running. Check that kube-system namespace has system pods in place:
@@ -236,5 +238,5 @@
    - [nginx-hello](#lets-play-with-it)
    - [prometheus](#prometheus)
    - [grafana](#grafana)
-    
+
 
