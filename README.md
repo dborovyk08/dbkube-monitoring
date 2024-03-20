@@ -233,5 +233,8 @@
     ```
 
 6) You can now go ahead and run all supportive deployments as we did with the local cluster:
+   - [nginx-hello](#lets-play-with-it)
+   - [prometheus](#prometheus)
+   - [grafana](#grafana)
     
 
