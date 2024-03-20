@@ -197,3 +197,25 @@
     terraform apply -auto-approve
     ```
     If no errors, to could take 10-15min to complete 
+
+4) Terraform will put output values from the installation according output.tf
+    Now we can grab it from there and update our kubeconfig.
+    Run the following command to retrieve the access credentials for your cluster and configure kubectl
+    ```
+    aws eks --region $(terraform output -raw region) update-kubeconfig \
+    --name $(terraform output -raw cluster_name)
+
+    ```
+    Now we have our local kube-config updated and let's check which kube-config is currently active:
+    ```
+    k config current-context
+    ```
+    It should start from arn:aws:eks:*your-config*
+
+    > [!NOTE]
+    >No worries if you have another kube-config already in place.
+    >You can switch between configs at any time
+    >```
+    >kubectl config use-context *your-context*
+    >```
+
