@@ -227,3 +227,11 @@
 >```
 >kubectl config delete-cluster *your-cluster*
 
+5) Congrats, your cluster in EKS is live and running. Check that kube-system namespace has system pods in place:
+    ```
+    kubectl get pods -A
+    ```
+
+6) You can now go ahead and run all supportive deployments as we did with the local cluster:
+    
+
