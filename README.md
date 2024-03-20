@@ -146,3 +146,15 @@
     ![Import community dashboard](https://dborovyk-nginx-public.s3.amazonaws.com/grafana3.png)
 9) Using Dashboard to monitor our Kubernetes:
     ![Gragana Dashboard](https://dborovyk-nginx-public.s3.amazonaws.com/grafana2.jpg)
+
+
+
+# AWS EKS with monitoring enabled
+
+## EKS with terraform
+
+> [!NOTE]
+> This is AWS EKS terraform installation by using standard Hashicorp Terraform script to run EKS
+> It creates NEW VPC in separate region,subnets,security groups,EC2 instances as kubernetes nodes,ARNs and other dependencies.
+> Please clone the repo and update the script and variables accordinally if you want it to use your current infastructure 
+
