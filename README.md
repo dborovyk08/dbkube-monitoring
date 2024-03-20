@@ -154,12 +154,15 @@
 ## EKS with terraform
 
 > [!NOTE]
-> This is AWS EKS terraform installation by using standard Hashicorp Terraform script to run EKS
+> This is AWS EKS terraform installation by using standard Hashicorp Terraform script to run EKS. 
 > It creates NEW VPC in separate region,subnets,security groups,EC2 instances as kubernetes nodes,ARNs and other dependencies.
-> Please clone the repo and update the script and variables accordingly if you want it to use your current infrastructure 
+> Please clone the repo and update the script and variables accordingly if you want it to use your current infrastructure. 
 
 1) Install terraform.
     If you are new to Terraform, please check official [**docs**](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) on how to install and run terraform.
+> [!NOTE]
+> If you're using git for this clone, do not forget to put terraform operational files to .gitignore. Otherwise you could have issues with commiting huge files to the git.
+> Check the example of terraform gitignore [**here**](https://github.com/github/gitignore/blob/main/Terraform.gitignore) 
 
 2) Install AWS CLI.
     If you are new to AWS CLI, please check official [**docs**](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) on how to install it on your system.
