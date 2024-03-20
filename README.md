@@ -1,4 +1,4 @@
-# minikube with monitoring enabled
+# Minikube with monitoring enabled
 
 ## Kubernetes (for MAC)
 
@@ -52,15 +52,15 @@
     ```
     k scale deploy nginx-hello-text --replicas=3
     ```
-    Scale nginx deployemnt to 3 pods
+    Scale nginx deployment to 3 pods
     ```
     k get endpoints nginx-hello-text
     ```
-    Be sure that our service is refering to all three pods
+    Be sure that our service is referring to all three pods
     ```
     minikube service nginx-hello-text
     ```
-    Now creatng a port-forwarding so we can access the serive. Copy URL with the loopback IP and newly created port.
+    Now creating a port-forwarding so we can access the service. Copy URL with the loopback IP and newly created port.
     Now you can either use browser or CURL.
     ```
     ·> curl 127.0.0.1:65081
@@ -145,7 +145,7 @@
 8) Import community based Grafana dashboards. For example you can use dashboard with 6417 id: 
     ![Import community dashboard](https://dborovyk-nginx-public.s3.amazonaws.com/grafana3.png)
 9) Using Dashboard to monitor our Kubernetes:
-    ![Gragana Dashboard](https://dborovyk-nginx-public.s3.amazonaws.com/grafana2.jpg)
+    ![Grafana Dashboard](https://dborovyk-nginx-public.s3.amazonaws.com/grafana2.jpg)
 
 
 
@@ -156,5 +156,41 @@
 > [!NOTE]
 > This is AWS EKS terraform installation by using standard Hashicorp Terraform script to run EKS
 > It creates NEW VPC in separate region,subnets,security groups,EC2 instances as kubernetes nodes,ARNs and other dependencies.
-> Please clone the repo and update the script and variables accordinally if you want it to use your current infastructure 
+> Please clone the repo and update the script and variables accordingly if you want it to use your current infrastructure 
 
+1) Install terraform.
+    If you are new to Terraform, please check official [**docs**](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) on how to install and run terraform.
+
+2) Install AWS CLI.
+    If you are new to AWS CLI, please check official [**docs**](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) on how to install it on your system.
+    On Mac the best way is to use brew for that
+    ```
+    brew install aws
+    ```
+    Next, is to configure aws and enter your aws credentials
+    Example:
+    ```
+    aws configure
+    AWS Access Key ID [********************]:
+    AWS Secret Access Key [**********************]:
+    Default region name [us-east-1]:
+    Default output format [json]:
+    ```
+    If you do not have your credentials ready, you will need to configure those through the [**AWS Console with IAM**](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
+
+    To be sure that everything configured correctly, run those command and double-check the output:
+    ```
+    cat ~/.aws/config
+    ```
+    ```
+    cat ~/.aws/credentials
+    ```
+
+3) Run terraform scripts (assuming repo is copied)
+    ```
+    cd terraform-provision-eks-cluster
+    terraform init
+    terraform plan
+    terraform apply -auto-approve
+    ```
+    If no errors, to could take 10-15min to complete 
