@@ -213,9 +213,9 @@
     It should start from arn:aws:eks:*your-config*
 
     > [!NOTE]
-    >No worries if you have another kube-config already in place.
-    >You can switch between configs at any time
-    >```
-    >kubectl config use-context *your-context*
-    >```
+    > No worries if you have another kube-config already in place.
+    > You can switch between configs at any time
+    > ```
+    > kubectl config use-context *your-context*
+    > ```
 
