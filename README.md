@@ -239,4 +239,7 @@
    - [prometheus](#prometheus)
    - [grafana](#grafana)
 
+> [!NOTE]
+> Keep in mins that EKS deployment difference in the way that you would need to create a service with --type=LoadBalancer
+> And having specific annotations for eks lb as it is written [**here**](https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html)
 
