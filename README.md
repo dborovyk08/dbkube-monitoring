@@ -242,4 +242,4 @@
 > [!NOTE]
 > Keep in mins that EKS deployment difference in the way that you would need to create a service with --type=LoadBalancer
 > And having specific annotations for eks lb as it is written [**here**](https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html)
-
+> Example of such service as LoadBalancer you can find in this repo: [link](terraform-provision-eks-cluster/service-nginx-hello-text.yaml)

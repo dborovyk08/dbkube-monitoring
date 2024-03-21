@@ -5,3 +5,6 @@
 *.tfstate.backup
 *.lock.hcl
 .DS_Store
+
+############
+values.yaml
