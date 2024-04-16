@@ -11,7 +11,7 @@
     ```
     Then just start your runtime
     ```
-    brew start colima
+    colima start
     ```
 
 2) So now we can install and start our kubernetes cluster. The easiest way is to use **minikube**
