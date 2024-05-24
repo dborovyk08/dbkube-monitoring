@@ -152,7 +152,7 @@
 
 
 # AWS EKS with monitoring enabled
-
+![AWS EKS lab](SWO-EKS.drawio.png)
 ## EKS with terraform
 
 > [!NOTE]
