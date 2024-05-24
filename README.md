@@ -1,6 +1,6 @@
 # Minikube with monitoring enabled
 
-![Minikube Lab diagram](Lab-minikube.drawio.png)
+![Minikube Lab diagram](Lab-minikube2.drawio.png)
 
 ## Kubernetes (for MAC)
 
