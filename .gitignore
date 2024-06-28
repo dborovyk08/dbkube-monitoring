@@ -10,4 +10,10 @@
 values.yaml
 
 ############
-*.pptx
+#*.pptx
+
+######
+## temp file
+###
+orion-kubernetes.yaml
+metrics-server-cman.yaml
