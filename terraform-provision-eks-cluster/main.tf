@@ -3,6 +3,7 @@
 
 provider "aws" {
   region = var.region
+  profile = "AdministratorAccessNoIAM-094266236805"
 }
 
 # Filter out local zones, which are not currently supported 
