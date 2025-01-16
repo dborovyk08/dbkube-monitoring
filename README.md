@@ -208,7 +208,14 @@
     --name $(terraform output -raw cluster_name)
 
     ```
-    Now we have our local kube-config updated and let's check which kube-config is currently active:
+   You would also need to add --profile 'profile-name' in case you're using aws sso
+   Before that configure your sso profile with this command:
+
+   ```
+   aws configure sso
+   ``` 
+
+   Now we have our local kube-config updated and let's check which kube-config is currently active:
     ```
     k config current-context
     ```
