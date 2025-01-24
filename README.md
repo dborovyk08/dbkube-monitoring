@@ -205,7 +205,7 @@
     Run the following command to retrieve the access credentials for your cluster and configure kubectl
     ```
     aws eks --region $(terraform output -raw region) update-kubeconfig \
-    --name $(terraform output -raw cluster_name)
+    --name $(terraform output -raw cluster_name) --profile "profile_name"
 
     ```
    You would also need to add --profile 'profile-name' in case you're using aws sso
