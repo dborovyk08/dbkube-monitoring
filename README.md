@@ -248,8 +248,42 @@
    - [prometheus](#prometheus)
    - [grafana](#grafana)
 
+
 > [!NOTE]
 > Keep in mins that EKS deployment difference in the way that you would need to create a service with --type=LoadBalancer
 > At some installation you would need to apply specific annotations for eks lb as it is written [**here**](https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html)
 > Example of such service as LoadBalancer you can find in this repo: [link](terraform-provision-eks-cluster/service-nginx-hello-text.yaml)
 > For this specific LAb you don't need to apply those annotations  --type=LoadBalancer should work just fine. So just replace --type=NodePort with --type=LoadBalancer
+
+## Adding Solarwinds Observability SaaS
+
+1) Adding New Kubernetes to SWOSaaS by following this guidance
+
+   [**Add kubernetes Cluster**](https://documentation.solarwinds.com/en/success_center/observability/content/configure/configure-kubernetes.htm?cshid=app-add-kubernetes) 
+
+2) You should be seeing your Cluster under Spaces-->Infrastructure-->Kubernetes
+
+    ![Kubernetes Dashboard](https://dborovyk-nginx-public.s3.us-east-1.amazonaws.com/Screenshot+2025-02-04+at+11.35.20.png)
+
+3) Let's test it by scaling our Apps deployments. Here is an initial state of our Nginx-hello
+
+   - We can check it from SWO-SaaS console by navigating under kubernetes cluster to workloads-->deployments (filter on namespace "apps") --> nginx-hello
+   - Notice that Replicas-set has a value 1
+
+       ![Nginx-hello Replicas 1](https://dborovyk-nginx-public.s3.us-east-1.amazonaws.com/Screenshot+2025-02-04+at+11.45.57.png)
+   - Now let's scale our deployment to 3
+
+     ```
+     kubectl scale deploy -n apps nginx-hello --replicas=3
+     ```
+
+     or if you're using alias k=kubectl as suggest at the start
+
+     ```
+     k scale deploy -n apps nginx-hello --replicas=3
+     ```
+
+    - SWO-SaaS Console should replicate this change in a moment
+  
+      ![Nginx-hello Replicas 3](https://dborovyk-nginx-public.s3.us-east-1.amazonaws.com/Screenshot+2025-02-04+at+11.53.04.png)   
+     
