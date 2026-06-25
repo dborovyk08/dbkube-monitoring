@@ -287,3 +287,4 @@
   
       ![Nginx-hello Replicas 3](https://dborovyk-nginx-public.s3.us-east-1.amazonaws.com/Screenshot+2025-02-04+at+11.53.04.png)   
      
+    - To be continue 
